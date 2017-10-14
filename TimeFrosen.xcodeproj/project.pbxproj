@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60E80F41F922749006874B1 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60E80F31F922748006874B1 /* cameraViewController.swift */; };
 		F62688BA1F8CF67900E29A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62688B91F8CF67900E29A74 /* AppDelegate.swift */; };
 		F62688BC1F8CF67900E29A74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62688BB1F8CF67900E29A74 /* ViewController.swift */; };
 		F62688BF1F8CF67900E29A74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62688BD1F8CF67900E29A74 /* Main.storyboard */; };
@@ -15,6 +16,10 @@
 		F62688CF1F8CF67A00E29A74 /* TimeFrosenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62688CE1F8CF67A00E29A74 /* TimeFrosenTests.swift */; };
 		F62688DA1F8CF67A00E29A74 /* TimeFrosenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62688D91F8CF67A00E29A74 /* TimeFrosenUITests.swift */; };
 		F62688EA1F8D13DC00E29A74 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62688E91F8D13DC00E29A74 /* model.swift */; };
+		F63B94231F922F70005CB713 /* IMG_6398.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F60E80EC1F921EC0006874B1 /* IMG_6398.JPG */; };
+		F63B94251F92361E005CB713 /* 44c9c840968fd722ae82a567b03c8216.png.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F63B94241F923618005CB713 /* 44c9c840968fd722ae82a567b03c8216.png.jpeg */; };
+		F63B94271F92368E005CB713 /* 806f43584b10d44b4b73d5e611b3f573.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F63B94261F92368B005CB713 /* 806f43584b10d44b4b73d5e611b3f573.jpeg */; };
+		F63B94291F92382B005CB713 /* ea95c57306d48bbc8418fb7d2690c307.png.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F63B94281F9237EE005CB713 /* ea95c57306d48bbc8418fb7d2690c307.png.jpeg */; };
 		F69E20F41F90EDDF00AA7162 /* launchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E20F31F90EDDE00AA7162 /* launchScreenViewController.swift */; };
 		F69E20F51F90F0C000AA7162 /* IMG_6394.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F69E20F01F90EA5900AA7162 /* IMG_6394.JPG */; };
 		F69E20FB1F91A4D500AA7162 /* InstudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69E20FA1F91A4D500AA7162 /* InstudyViewController.swift */; };
@@ -42,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F60E80EC1F921EC0006874B1 /* IMG_6398.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_6398.JPG; sourceTree = "<group>"; };
+		F60E80F31F922748006874B1 /* cameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = cameraViewController.swift; path = /Users/ertuil/Code/TimeFrosen/TimeFrosen/cameraViewController.swift; sourceTree = "<absolute>"; };
 		F62688B61F8CF67900E29A74 /* TimeFrosen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeFrosen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62688B91F8CF67900E29A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62688BB1F8CF67900E29A74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +63,9 @@
 		F62688D91F8CF67A00E29A74 /* TimeFrosenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrosenUITests.swift; sourceTree = "<group>"; };
 		F62688DB1F8CF67A00E29A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F62688E91F8D13DC00E29A74 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		F63B94241F923618005CB713 /* 44c9c840968fd722ae82a567b03c8216.png.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 44c9c840968fd722ae82a567b03c8216.png.jpeg; sourceTree = "<group>"; };
+		F63B94261F92368B005CB713 /* 806f43584b10d44b4b73d5e611b3f573.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 806f43584b10d44b4b73d5e611b3f573.jpeg; sourceTree = "<group>"; };
+		F63B94281F9237EE005CB713 /* ea95c57306d48bbc8418fb7d2690c307.png.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ea95c57306d48bbc8418fb7d2690c307.png.jpeg; sourceTree = "<group>"; };
 		F69E20E61F904CDA00AA7162 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		F69E20E71F904CDA00AA7162 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
 		F69E20E81F904CDA00AA7162 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 		F62688B81F8CF67900E29A74 /* TimeFrosen */ = {
 			isa = PBXGroup;
 			children = (
+				F60E80F31F922748006874B1 /* cameraViewController.swift */,
 				F69E20FE1F91BF9900AA7162 /* whiteAppViewController.swift */,
 				F69E20FA1F91A4D500AA7162 /* InstudyViewController.swift */,
 				F69E20F31F90EDDE00AA7162 /* launchScreenViewController.swift */,
@@ -162,7 +173,11 @@
 		F69E20E51F904CDA00AA7162 /* APPICON */ = {
 			isa = PBXGroup;
 			children = (
+				F63B94241F923618005CB713 /* 44c9c840968fd722ae82a567b03c8216.png.jpeg */,
+				F63B94281F9237EE005CB713 /* ea95c57306d48bbc8418fb7d2690c307.png.jpeg */,
+				F63B94261F92368B005CB713 /* 806f43584b10d44b4b73d5e611b3f573.jpeg */,
 				F69E20F01F90EA5900AA7162 /* IMG_6394.JPG */,
+				F60E80EC1F921EC0006874B1 /* IMG_6398.JPG */,
 				F69E20E61F904CDA00AA7162 /* 1024.png */,
 				F69E20E71F904CDA00AA7162 /* 60.png */,
 				F69E20E81F904CDA00AA7162 /* 58.png */,
@@ -192,7 +207,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F62688DE1F8CF67A00E29A74 /* Build configuration list for PBXNativeTarget "TimeFrosen" */;
 			buildPhases = (
-				AF44B6A2AA53B9879D877CD5 /* [CP] Check Pods Manifest.lock */,
 				F62688B21F8CF67900E29A74 /* Sources */,
 				F62688B31F8CF67900E29A74 /* Frameworks */,
 				F62688B41F8CF67900E29A74 /* Resources */,
@@ -255,6 +269,11 @@
 					F62688B51F8CF67900E29A74 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					F62688C91F8CF67900E29A74 = {
 						CreatedOnToolsVersion = 9.0;
@@ -294,9 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62688C41F8CF67900E29A74 /* LaunchScreen.storyboard in Resources */,
+				F63B94291F92382B005CB713 /* ea95c57306d48bbc8418fb7d2690c307.png.jpeg in Resources */,
+				F63B94231F922F70005CB713 /* IMG_6398.JPG in Resources */,
 				F69E20F51F90F0C000AA7162 /* IMG_6394.JPG in Resources */,
 				F62688C11F8CF67900E29A74 /* Assets.xcassets in Resources */,
 				F62688BF1F8CF67900E29A74 /* Main.storyboard in Resources */,
+				F63B94271F92368E005CB713 /* 806f43584b10d44b4b73d5e611b3f573.jpeg in Resources */,
+				F63B94251F92361E005CB713 /* 44c9c840968fd722ae82a567b03c8216.png.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,27 +339,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		AF44B6A2AA53B9879D877CD5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimeFrosen-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		F62688B21F8CF67900E29A74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -349,6 +351,7 @@
 				F6E56D611F8E6148004EED8E /* recordViewController.swift in Sources */,
 				F62688BC1F8CF67900E29A74 /* ViewController.swift in Sources */,
 				F69E20FF1F91BF9900AA7162 /* whiteAppViewController.swift in Sources */,
+				F60E80F41F922749006874B1 /* cameraViewController.swift in Sources */,
 				F62688BA1F8CF67900E29A74 /* AppDelegate.swift in Sources */,
 				F62688EA1F8D13DC00E29A74 /* model.swift in Sources */,
 			);

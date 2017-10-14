@@ -28,7 +28,15 @@ class failedViewController: UIViewController {
         }
         let min = Int(sec / 60)
         if mo.InStudyFlag == true{
-            mo.result.append(["Time":"\(mo.stopTime)", "res":"\(false)", "min": "\(min)"])
+            let dateF = DateFormatter()
+            dateF.locale = NSLocale.current
+            dateF.dateFormat = "yyyy-MM-dd HH:mm"
+            let datestr = dateF.string(from: mo.stopTime as Date)
+            if min >= mo.choTime{
+                mo.result.append(["Time":"\(datestr)", "res":"\(true)", "min": "\(min)"])
+            }else{
+                mo.result.append(["Time":"\(datestr)", "res":"\(false)", "min": "\(min)"])
+            }
         }
         mo.InStudyFlag = false
         if min == -1 {

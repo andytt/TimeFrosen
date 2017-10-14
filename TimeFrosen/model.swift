@@ -40,7 +40,6 @@ class model{
         wapp["Baiduyun"] = false
         wapp["UC"] = false
         wapp["Wangzhe"] = false
-        print(wapp)
     }
 }
 

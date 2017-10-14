@@ -69,6 +69,7 @@ class InstudyViewController: UIViewController,UITableViewDelegate,UITableViewDat
         UIScreen.main.brightness += _transX / weight
         //View2.alpha += _transX/weight
     }
+    
     @objc func checkLock(){
         print("check")
         if mo.lock == false {
@@ -79,6 +80,7 @@ class InstudyViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         mo.lock = false
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(checkLock), name:  NSNotification.Name(rawValue: "UIApplicationWillEnterForegroundNotification"), object: nil)
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(mo.choTime * 60) ,target:self,selector: #selector(self.finishStudy),userInfo:nil,repeats:false)
@@ -171,11 +173,28 @@ class InstudyViewController: UIViewController,UITableViewDelegate,UITableViewDat
         default:
             print("No raw")
         }
+
         return cell
     }
     
     @objc func tappedb1(){
-        openURL("telprompt://")
+        let alertController = UIAlertController(title: "拨打电话",
+                                                message: "请输入电话号码", preferredStyle: .alert)
+        alertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "号码"
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+            action in
+            //也可以用下标的形式获取textField let login = alertController.textFields![0]
+            let number = alertController.textFields!.first!.text
+            self.openURL("telprompt://"+number!)
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+
         mo.lock = true
     }
     @objc func tappedb2(){
@@ -204,8 +223,10 @@ class InstudyViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     @objc func tappedb8(){
-        openURL("camera://")
-        mo.lock = true
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let camera = story.instantiateViewController(withIdentifier: "camera") as! cameraViewController
+        self.present(camera, animated: true)
+
     }
     @objc func tappedb9(){
         openURL("photos-redirect://")
@@ -235,11 +256,27 @@ class InstudyViewController: UIViewController,UITableViewDelegate,UITableViewDat
         openURL("tencentlaunch1104466820://")
         mo.lock = true
     }
+    
     func openURL(_ URLString : String) {
         guard let url = URL(string: URLString) else {return}
         guard UIApplication.shared.canOpenURL(url) else {return}
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+    @IBAction func failButton(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "系统提示",
+                                                message: "您确定要离开吗？", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+            action in
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let failedViewControl = story.instantiateViewController(withIdentifier: "failed") as! failedViewController
+            self.present(failedViewControl, animated: true)
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 class TableCell :UITableViewCell{

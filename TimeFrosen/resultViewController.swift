@@ -25,7 +25,11 @@ class resultViewController: UIViewController {
         let sec = mo.stopTime.timeIntervalSince(mo.startTime as Date)
         let min = Int(sec / 60)
         if mo.InStudyFlag == true {
-            mo.result.append(["Time":"\(mo.stopTime)", "res":"\(true)", "min": "\(min)"])
+            let dateF = DateFormatter()
+            dateF.locale = NSLocale.current
+            dateF.dateFormat = "yyyy-MM-dd HH:mm"
+            let datestr = dateF.string(from: mo.stopTime as Date)
+            mo.result.append(["Time":"\(datestr)", "res":"\(true)", "min": "\(min)"])
         }
         mo.InStudyFlag = false
         Label.text = "本次时间：\(min)min"

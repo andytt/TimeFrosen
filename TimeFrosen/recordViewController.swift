@@ -11,7 +11,7 @@ import UIKit
 
 class recordViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     var mo = model.mo
-
+    var points = 0
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,16 +20,43 @@ class recordViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        Label.text = "总共：\(mo.total)次\t\t成功：\(mo.success)次\t\t失败：\(mo.total-mo.success)次\t"
+
+        for record in mo.result{
+            if record["res"] == "true"{
+                points += Int(record["min"]!)! * 10
+            }else{
+                points -= Int(record["min"]!)! * 35
+            }
+        }
+        Label.text = "成功：\(mo.success)次\t\t失败：\(mo.total-mo.success)次\t\t得分：\(points)"
         
         
     }
     @IBAction func ClearAll(_ sender: UIButton) {
-        mo.total = 0
-        mo.success = 0
-        mo.result = []
-        tableView.reloadData()
-        Label.text = "总共：\(mo.total)次\t\t成功：\(mo.success)次\t\t失败：\(mo.total-mo.success)次\t"
+        if points < 5000{
+            let alertController = UIAlertController(title: "想啥呢？",
+                                                    message: "分数不够5000，不能清除", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的，我知道了", style: .default, handler:nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }else{
+            let alertController = UIAlertController(title: "正式警告",
+                                                    message: "确定要你的辛苦努力么？", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "手贱，点错了", style: .cancel, handler: nil)
+            let okAction = UIAlertAction(title: "好的，我想清楚了", style: .default, handler: {
+                action in
+                self.mo.total = 0
+                self.mo.success = 0
+                self.mo.result = []
+                self.tableView.reloadData()
+                self.points = 0
+                self.Label.text = "成功：\(self.mo.success)次\t\t失败：\(self.mo.total-self.mo.success)次\t\t得分：\(self.points)"
+            })
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +78,8 @@ class recordViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath)->UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
-        cell.textLabel!.text = "持续了\(mo.result[indexPath.row]["min"] ?? "NULL")分钟"
+
+        cell.textLabel!.text = "时间:\(String(describing: mo.result[indexPath.row]["Time"]!)).\t\t学习了\(mo.result[indexPath.row]["min"] ?? "NULL")分钟"
         if mo.result[indexPath.row]["res"] == "true" {
             cell.textLabel?.textColor = UIColor.green
         }else{

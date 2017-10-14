@@ -28,20 +28,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        if mo.lock == false{
+            pause()
+        }
         
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        if mo.lock == false{
-            pause()
-        }
         saveData()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+
         loadData()
     }
 
@@ -61,7 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             mo.total += 1
             let sec = mo.stopTime.timeIntervalSince(mo.startTime as Date)
             let min = Int(sec / 60)
-            mo.result.append(["Time":"\(mo.stopTime)", "res":"\(false)", "min": "\(min)"])
+            let dateF = DateFormatter()
+            dateF.locale = NSLocale.current
+            dateF.dateFormat = "yyyy-MM-dd HH:mm"
+            let datestr = dateF.string(from: mo.stopTime as Date)
+            if min >= mo.choTime{
+                mo.result.append(["Time":"\(datestr)", "res":"\(true)", "min": "\(min)"])
+            }else{
+                mo.result.append(["Time":"\(datestr)", "res":"\(false)", "min": "\(min)"])
+            }
             mo.InStudyFlag = false
             print("Pause")
         }
@@ -75,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fileManager.createFile(atPath: DataPath, contents: nil, attributes: nil)
         }
         let data = mo.result as NSArray
-        print("data:\(data)")
+
         data.write(toFile: DataPath,atomically: true)
         
         let settingPath = AppPath + "/Documents/setting.plist"
@@ -85,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fileManager.createFile(atPath: settingPath, contents: nil, attributes: nil)
         }
         let setting = mo.wapp as NSDictionary
-        print(setting)
+
         setting.write(toFile: settingPath,atomically: true)
     }
     
@@ -117,7 +126,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         mo.wapp = cachesetting! as! Dictionary
-        print(mo.wapp)
     }
     
 }

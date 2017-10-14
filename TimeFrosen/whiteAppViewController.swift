@@ -51,7 +51,7 @@ class whiteAppViewController: UIViewController,UITableViewDelegate,UITableViewDa
             cell.Button.addTarget(self, action:#selector(tappedb1(sender:)), for:.valueChanged)
         case 1:
             cell.label.text="短信"
-            cell.Button.isEnabled = mo.wapp["Message"]!
+            cell.Button.isOn = mo.wapp["Message"]!
             cell.Button.addTarget(self, action:#selector(tappedb2(sender:)), for:.valueChanged)
         case 2:
             cell.label.text="QQ"
