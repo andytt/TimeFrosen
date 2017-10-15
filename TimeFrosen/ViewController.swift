@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     var mo = model.mo
     override func viewDidLoad() {
         super.viewDidLoad()
+        mo.choTime = 45
+        showTImeText.text = "选择的时间是：\(mo.choTime)min"
         // Do any additional setup after loading the view, typically from a nib.
         if mo.firstInit == true{
             let str = "com.apple.springboard.lockcomplete"
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var StartButtom: UIButton!
     
     @IBAction func changeTime(_ sender: UISlider) {
-        mo.choTime = Int(sender.value)
+        mo.choTime = (Int(sender.value)/5*5)
         showTImeText.text = "选择的时间是：\(mo.choTime)min"
     }
 
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
     static func callback(){
         print("Lock")
         let mo = model.mo
-        if mo.lock == false{
+        if mo.lock == false && mo.result[mo.result.count-1]["res"] == "false"{
         mo.total -= 1
         mo.result.remove(at: mo.result.count-1)
         }

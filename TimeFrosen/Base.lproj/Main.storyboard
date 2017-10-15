@@ -310,7 +310,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-ks-B7k">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-ks-B7k">
                                 <rect key="frame" x="128" y="284" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -555,6 +555,7 @@
         <image name="ea95c57306d48bbc8418fb7d2690c307.png.jpeg" width="1009" height="2448"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="u3E-MO-L9I"/>
         <segue reference="jFP-gU-QZF"/>
     </inferredMetricsTieBreakers>
 </document>

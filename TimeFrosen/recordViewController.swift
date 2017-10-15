@@ -25,7 +25,7 @@ class recordViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             if record["res"] == "true"{
                 points += Int(record["min"]!)! * 10
             }else{
-                points -= Int(record["min"]!)! * 35
+                points = 0
             }
         }
         Label.text = "成功：\(mo.success)次\t\t失败：\(mo.total-mo.success)次\t\t得分：\(points)"
@@ -79,8 +79,8 @@ class recordViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath)->UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
 
-        cell.textLabel!.text = "时间:\(String(describing: mo.result[indexPath.row]["Time"]!)).\t\t学习了\(mo.result[indexPath.row]["min"] ?? "NULL")分钟"
-        if mo.result[indexPath.row]["res"] == "true" {
+        cell.textLabel!.text = "时间:\(String(describing: mo.result[mo.result.count-indexPath.row-1]["Time"]!)).\t\t学习了\(mo.result[mo.result.count-indexPath.row-1]["min"] ?? "NULL")分钟"
+        if mo.result[mo.result.count-indexPath.row-1]["res"] == "true" {
             cell.textLabel?.textColor = UIColor.green
         }else{
             cell.textLabel?.textColor = UIColor.red
